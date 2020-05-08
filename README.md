@@ -2,8 +2,12 @@
 Обработка и и плагин для интеграции телефонии 3CX в 1С:Предприятие 8
 
 Папки:
- - CallTriggerCmdPlugin - плагин, который загружается в 3cx phone for windows
- - CallTriggerCmdServiceProvider - описание формата обмена между CallTriggerCmdPlugin и V8AddInLibrary
- - References - интеграционная компонента для создания плагинов 3cx phone for windows
- - V8AddInLibrary - com-объект для подключения к 1С:Предприятие
- - install - готовая сборка для инсталяции плагина
+ - CallTriggerCmdPlugin - плагин, который загружается в 3cx phone for windows.
+ - CallTriggerCmdServiceProvider - описание формата обмена между CallTriggerCmdPlugin и V8AddInLibrary.
+ - References - интеграционная компонента для создания плагинов 3cx phone for windows.
+ - V8AddInLibrary - com-объект для подключения к 1С:Предприятие.
+ - install - готовая сборка для инсталяции плагина.
+ 
+ Файлы:
+ - Телефон.epf - обработка, реализующая интерфейс sip-фона аналогичный стандартному интерфейсу 3cx phone for windows. Реализует программный интерфейс для управления всеми возможностями телефона.
+ - ТестПрограммногоИнтерфейса.epf - обработка, реализующая графический интерфейс для тестирования программного интерфейса Телефон.epf.
