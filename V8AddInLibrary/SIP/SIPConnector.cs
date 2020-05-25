@@ -584,7 +584,7 @@ namespace TCX.CallTriggerCmd
         public object GetVersionComponent()
         {
             string verPlugin;
-            string verCOM = "1.9";
+            string verCOM = "2.1";
 
             try
             {

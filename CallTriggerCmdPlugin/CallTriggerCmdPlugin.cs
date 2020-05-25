@@ -819,7 +819,7 @@ namespace TCX.CallTriggerCmd
 
         public string GetVersionComponent()
         {
-            return "1.9";
+            return "2.1";
         }
     }
 }
