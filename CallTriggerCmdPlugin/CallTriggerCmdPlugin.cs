@@ -803,15 +803,20 @@ namespace TCX.CallTriggerCmd
                 return list;
             }
 
+            var it = 0;
+
             foreach (var recordInfo in RecordsList)
             {
+                if (it > 150) break;
+                it++;
+
                 var record = new Record
                 {
                     DisplayDate = recordInfo.DisplayDate,
                     FileName = recordInfo.FileName
                 };
 
-                list.Add(record);
+                list.Add(record);                
             }
 
             return list;
@@ -819,7 +824,7 @@ namespace TCX.CallTriggerCmd
 
         public string GetVersionComponent()
         {
-            return "2.1";
+            return "2.2";
         }
     }
 }

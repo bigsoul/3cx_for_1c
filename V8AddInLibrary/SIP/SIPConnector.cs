@@ -46,8 +46,11 @@ namespace TCX.CallTriggerCmd
 
             if (Inited)
             {
-                Service.Subscribe();
-                return;
+                try
+                {
+                    Service.Subscribe();
+                    return;
+                } catch { }
             }
 
             var binding = new NetNamedPipeBinding();
@@ -584,7 +587,7 @@ namespace TCX.CallTriggerCmd
         public object GetVersionComponent()
         {
             string verPlugin;
-            string verCOM = "2.1";
+            string verCOM = "2.2";
 
             try
             {
