@@ -824,7 +824,7 @@ namespace TCX.CallTriggerCmd
 
         public string GetVersionComponent()
         {
-            return "2.2";
+            return "2.3";
         }
     }
 }

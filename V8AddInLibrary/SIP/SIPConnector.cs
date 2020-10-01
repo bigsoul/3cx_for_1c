@@ -50,7 +50,11 @@ namespace TCX.CallTriggerCmd
                 {
                     Service.Subscribe();
                     return;
-                } catch { }
+                }
+                catch (Exception exception)
+                {
+
+                }
             }
 
             var binding = new NetNamedPipeBinding();
@@ -208,7 +212,7 @@ namespace TCX.CallTriggerCmd
             {
                 return _MakeCall(Distantion, Video);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 return _MakeCall(Distantion, Video);
@@ -238,7 +242,7 @@ namespace TCX.CallTriggerCmd
             {
                 _DropCall(callId);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _DropCall(callId);
@@ -257,7 +261,7 @@ namespace TCX.CallTriggerCmd
             {
                 _Hold(callId, holdOn);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _Hold(callId, holdOn);
@@ -276,7 +280,7 @@ namespace TCX.CallTriggerCmd
             {
                 return _BeginTransfer(callId, destination);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 return _BeginTransfer(callId, destination);
@@ -297,7 +301,7 @@ namespace TCX.CallTriggerCmd
             {
                 _BlindTransfer(callId, destination);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _BlindTransfer(callId, destination);
@@ -316,7 +320,7 @@ namespace TCX.CallTriggerCmd
             {
                 _Activate(callId, Video);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _Activate(callId, Video);
@@ -342,7 +346,7 @@ namespace TCX.CallTriggerCmd
             {
                 _CancelTransfer(callId);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _CancelTransfer(callId);
@@ -361,7 +365,7 @@ namespace TCX.CallTriggerCmd
             {
                 _CompleteTransfer(callId);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _CompleteTransfer(callId);
@@ -380,7 +384,7 @@ namespace TCX.CallTriggerCmd
             {
                 _Mute(callId);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _Mute(callId);
@@ -399,7 +403,7 @@ namespace TCX.CallTriggerCmd
             {
                 _SendDTMF(callId, dtmf);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _SendDTMF(callId, dtmf);
@@ -418,7 +422,7 @@ namespace TCX.CallTriggerCmd
             {
                 _SetActiveProfile(profileId);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _SetActiveProfile(profileId);
@@ -437,7 +441,7 @@ namespace TCX.CallTriggerCmd
             {
                 _SetProfileExtendedStatus(profileId, status);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _SetProfileExtendedStatus(profileId, status);
@@ -456,7 +460,7 @@ namespace TCX.CallTriggerCmd
             {
                 _SetQueueLoginStatus(loggedIn);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _SetQueueLoginStatus(loggedIn);
@@ -475,7 +479,7 @@ namespace TCX.CallTriggerCmd
             {
                 return _ActiveCalls();
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 return _ActiveCalls();
@@ -494,7 +498,7 @@ namespace TCX.CallTriggerCmd
             {
                 return _Profiles();
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 return _Profiles();
@@ -513,7 +517,7 @@ namespace TCX.CallTriggerCmd
             {
                 return _ProfilesEx();
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 return _ProfilesEx();
@@ -532,7 +536,7 @@ namespace TCX.CallTriggerCmd
             {
                 return _Status();
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 return _Status();
@@ -551,7 +555,7 @@ namespace TCX.CallTriggerCmd
             {
                 _LoadRecordingFiles(recordsRequest);
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 _LoadRecordingFiles(recordsRequest);
@@ -571,7 +575,7 @@ namespace TCX.CallTriggerCmd
             {
                 return _GetRecordingList();
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 return _GetRecordingList();
@@ -587,13 +591,13 @@ namespace TCX.CallTriggerCmd
         public object GetVersionComponent()
         {
             string verPlugin;
-            string verCOM = "2.2";
+            string verCOM = "2.3";
 
             try
             {
                 verPlugin = _GetVersionComponent();
             }
-            catch
+            catch (Exception exception)
             {
                 InitService();
                 verPlugin = _GetVersionComponent();
